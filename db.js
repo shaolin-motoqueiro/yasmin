@@ -3,8 +3,8 @@ const { Pool } = require('pg');
 const pool = new Pool({
   user: 'postgres',
   host: 'localhost',
-  database: 'barbearia2_db',
-  password: 'senai', // <--- SUBSTITUA PELA SUA SENHA DO PGADMIN
+  database: 'yasmin',
+  password: 'admin', // <--- SUBSTITUA PELA SUA SENHA DO PGADMIN
   port: 5432,
 });
 

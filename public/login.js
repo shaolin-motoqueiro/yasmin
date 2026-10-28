@@ -20,7 +20,6 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
       return;
     }
 
-    // Salva o token de sessão e redireciona para o painel
     localStorage.setItem('token', dados.token);
     localStorage.setItem('usuario', JSON.stringify(dados.usuario));
     window.location.href = 'painel.html';

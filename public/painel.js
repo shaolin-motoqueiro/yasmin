@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
   const token = localStorage.getItem('token');
 
-  // Se não houver token salvo, redireciona imediatamente para o login
   if (!token) {
     window.location.href = 'index.html';
     return;
@@ -27,7 +26,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
-// Ação de Logout
 document.getElementById('btnLogout').addEventListener('click', () => {
   localStorage.clear();
   window.location.href = 'index.html';

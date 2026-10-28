@@ -4,7 +4,6 @@ if (!token) {
   window.location.href = 'index.html';
 }
 
-// Carregar Lista de Clientes
 async function carregarClientes(termo = '') {
   try {
     const url = termo ? `/api/clientes?busca=${encodeURIComponent(termo)}` : '/api/clientes';
@@ -40,7 +39,6 @@ async function carregarClientes(termo = '') {
   }
 }
 
-// Submeter Novo Cliente
 document.getElementById('formCliente').addEventListener('submit', async (e) => {
   e.preventDefault();
 
@@ -73,7 +71,6 @@ document.getElementById('formCliente').addEventListener('submit', async (e) => {
   }
 });
 
-// Ações do Botão de Pesquisa
 document.getElementById('btnBuscar').addEventListener('click', () => {
   const termo = document.getElementById('campoBusca').value;
   carregarClientes(termo);
@@ -84,5 +81,4 @@ document.getElementById('btnLimpar').addEventListener('click', () => {
   carregarClientes();
 });
 
-// Inicialização
 document.addEventListener('DOMContentLoaded', () => carregarClientes());

@@ -5,6 +5,7 @@ const bcrypt = require('bcryptjs');
 const db = require('./db');
 
 const app = express();
+const PORT = 3000;
 const JWT_SECRET = 'secreta_barbearia_key_123'; // Chave para assinar a sessão JWT
 
 app.use(cors());
@@ -134,8 +135,12 @@ app.post('/api/clientes', verificarToken, async (req, res) => {
     res.status(500).json({ mensagem: 'Erro interno ao salvar cliente.' });
   }
 });
-const PORT = 3000;
-app.listen(PORT, () => {
+app.listen(PORT, (err) => {
+  if (err) {
+    console.error(`Não foi possível iniciar na porta ${PORT}: ${err.message}`);
+    process.exit(1);
+  }
+
   console.log(`Servidor a rodar na porta ${PORT}`);
 });
 
